@@ -1,0 +1,31 @@
+\documentclass[a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english, russian]{babel}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.9}
+\usetikzlibrary{calc}
+
+
+\title{Практическая работа №2}
+\author{Студент группы 8871 Данила Турыгин}
+
+\begin{document}
+\maketitle 
+$\alpha$=20$^\circ$;
+$\theta$=115$^\circ$;
+    \begin{tikzpicture}
+        \newcommand{\alfa}{20}
+        \newcommand{\teta}{115}
+    \newcommand{\iks}{4}
+        \draw[thin,->,] (0,0) -- (5.5,0) node[below] {$X$};
+        \draw[thin,->,] (0,0) -- ({5.5*cos(\teta)},{5.5*sin(\teta)}) node[left] {$Y$};
+        \draw[dashed,->,] (0,0) -- ({-3*cos(\teta)},{-3*sin(\teta)}) node[left] {$-Y$};
+    \draw[red,thin,->,] (0,0) -- ({\iks*cos(\alfa)},{\iks*sin(\alfa)}) node[below=-16pt] {$\vec{x}$};
+        \draw[thin] ({\iks*cos(\alfa)},{\iks*sin(\alfa)}) -- (3.75877,0) node[below=-18pt, left] {$h_1$};
+        \draw[thin] ({\iks*cos(\alfa)},{\iks*sin(\alfa)}) -- (4.38,0) node[below=-23pt, left=-7] {$h_2$};
+        \draw[thin] ({\iks*cos(\alfa)},{\iks*sin(\alfa)}) -- (0.15679,-0.336237) node[below=3pt, left=-25] {$h_3$};
+        \draw[thin] ({\iks*cos(\alfa)},{\iks*sin(\alfa)}) -- (-0.637946,1.368081) node[below=-6pt, left=-70] {$h_4$};
+    \draw[thin,<->,] (5,0) arc (0:115:5) node[below, left=-150pt]{$\theta$};
+    \draw[thin,<->,] (2,0) arc (0:20:2) node[below=9pt, left=-15pt]{$\alpha$};
+    \end{tikzpicture}
+\end{document}

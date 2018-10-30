@@ -1,0 +1,44 @@
+\documentclass[a4paper,12pt]{scrartcl}
+\usepackage[T1,T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{mathtext}
+\usepackage[english, russian]{babel}
+\usepackage[left=1cm,right=1cm,top=1cm,bottom=2cm]{geometry}
+\usepackage{tikz}
+
+
+\title{Практическая работа №3}
+\author {Студент группы 8871 Данила Турыгин}
+
+\begin{document}
+\begin{center}
+Практическая работа №3\\
+Студент группы 8871 Данила Турыгин\\
+\end{center}
+
+
+Функция: $x^3 + x ^ 2 - 6 \cdot x = 0$.
+
+
+Производная функции $3\cdot x ^ 2 + 2 \cdot x - 6 = 0$.
+
+
+Отрезок синего цвета - касательная к графику функции в точке $x_1$ = 1,6. Эта касательная пересекает ось абсцисс в точке $x_2$ = 2.2033.Отрезок красного цвета - касательная к графику функции в точке $x_2$.
+\begin{center}
+    \begin{tikzpicture}
+    \begin{scope}[scale=1]
+        \newcommand{\ixs}{1.6}
+        \newcommand{\ihs}{2.2033}
+    \draw[->] (-3.5,0) -- (3,0) node[right] {$x$};
+    \draw[->] (0,-6) -- (0,9) node[above] {$y$};
+        \foreach \x\xtext in {-3/-3,-2/-2,-1/-1,1/1,2/2} %
+        \draw (\x,0.1) -- (\x,-0.1) node [below]{$\xtext$};
+    \draw[domain=-3.3:2.6, smooth, black] plot ({\x},{((\x)*(\x)*(\x))+(\x*(\x))-((\x)*6)}) node[right];
+        \draw[domain=1:2.9, smooth, blue] plot ({\x},{((3*(\ixs)*(\ixs))+(2*(\ixs))-6)*(\x-\ixs)+((\ixs)*(\ixs)*(\ixs))+(\ixs*(\ixs))-((\ixs)*6)}) node[right];
+        \draw[domain=1.7:2.6, smooth, red] plot ({\x},{((3*(\ihs)*(\ihs))+(2*(\ihs))-6)*(\x-\ihs)+((\ihs)*(\ihs)*(\ihs))+(\ihs*(\ihs))-((\ihs)*6)}) node[right];
+    \draw[dashed, green] (\ixs,0) -- (\ixs,-2.9440) node[below=-92pt, left=-11pt] {$x_1$};
+    \draw[dashed, violet] (\ihs,0) -- (\ihs,2.3307) node[below=77pt, left=-15pt] {$x_2$};
+    \end{scope}
+    \end{tikzpicture}
+\end{center}
+\end{document}
