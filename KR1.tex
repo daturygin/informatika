@@ -1,0 +1,46 @@
+\documentclass[russian, utf8, nocolumnxxxi, nocolumnxxxii]{eskdtext}
+\usepackage[utf8]{inputenc}
+\usepackage[T1,T2A]{fontenc}
+\usepackage[english, russian]{babel}
+\usepackage[argument]{graphicx}
+\usepackage{graphicx}
+\graphicspath{{images/}}
+\usepackage{wrapfig}
+\usepackage{tikz}
+\usepackage{siunitx}
+\usepackage[american,cuteinductors,smartlabels]{circuitikz}
+
+\title{KR}
+\author{danilaturygin}
+\date{December 2018}
+
+\begin{document}
+1. Даны функции f(x) = $\sqrt{3}$sin(x) + cos(x); \\
+g(x) = cos(2x + $\pi$/3) - 1 \\
+а)Решить уравнение f(x)=g(x). \\
+б)Исследовать функцию h(x) = f(x) - g(x) на промежутке [0; $\frac{5}{6}$$\pi$] \\
+Строим график функции:\\
+function y=h(x) \\
+y=sqrt(3)*sin(x)+cos(x)-cos(2*x+pi/3)+1 \\
+endfunction \\
+plot(0:0.01:2*pi,h) \\
+\includegraphics[width=\textwidth]{1.1} \\
+Рисунок 1 \\
+Находим корни уравнения: \\
+deff($'y=h(x)'$,$'y=sqrt(3)*sin(x)+cos(x)-cos(2*x+$pi$/3)+1'$) \\
+x0=[3,4.2,4.3,5.5]; \\
+$[x,v]$=fsolve(x0,h) \\
+ $v$  = \\
+-2.220D-16 \quad 0. \quad 0. \quad 7.772D-16 \\
+ $x$  = \\
+   2.6179939 \quad 4.1887902 \quad 4.1887902 \quad 5.759586 \\
+3*x/$pi$ \\
+ ans  = \\
+   2.5 \quad 4. \quad 4. \quad 5.5\\
+Корни уравнения:\\
+$$x_1 = \frac{5}{6}\pi + 2n\pi, n \in Z$$
+$$x_2 = \frac{8}{6}\pi + 2n\pi, n \in Z$$
+$$x_3 = \frac{11}{6}\pi + 2n\pi, n \in Z$$
+
+
+\end{document}
