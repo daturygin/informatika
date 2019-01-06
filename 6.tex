@@ -1,0 +1,40 @@
+\documentclass[a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english, russian]{babel}
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+
+
+
+\title{Практическая работа №6}
+\author{Студент группы 8871 Данила Турыгин}
+\begin{document}
+\date{}
+\newcommand{\alfa}{60}
+\maketitle{}\\
+\begin{tikzpicture}
+
+\draw[thin,->,red] (0,0) to (4,0);
+\draw[thin,->,blue] (4,0) to (5,0);
+
+\draw[thin,->,red] (0,0) to ({cos(\alfa)*4},{sin(\alfa)*4});
+\draw[thin,->,blue] ({cos(\alfa)*4},{sin(\alfa)*4}) to (1,{sin(\alfa)*4});
+
+\draw[thin,->,red] (0,0) to ({cos(2*\alfa)*4},{sin(2*\alfa)*4});
+\draw[thin,->,blue] ({cos(2*\alfa)*4},{sin(2*\alfa)*4}) to (-1,{sin(2*\alfa)*4});
+
+\draw[thin,->,red] (0,0) to (-4,0);
+\draw[thin,->,blue] (-4,0) to (-5,0);
+
+\draw[thin,->,red] (0,0) to ({cos(4*\alfa)*4},{sin(4*\alfa)*4});
+\draw[thin,->,blue] ({cos(4*\alfa)*4},{sin(4*\alfa)*4}) to (-1,{sin(4*\alfa)*4});
+
+\draw[thin,->,red] (0,0) to ({cos(5*\alfa)*4},{sin(5*\alfa)*4});
+\draw[thin,->,blue] ({cos(5*\alfa)*4},{sin(5*\alfa)*4}) to (1,{sin(5*\alfa)*4});
+
+\draw[thin,<->,] (2,0) arc (0:60:2) node[below=20pt, left=-35pt]{$\alpha$};
+\draw[thin,<->,] (4.5,0) arc (0:180:0.5) node[below=-20pt, left=-27pt]{$3\cdot\alpha$};
+\end{tikzpicture}
+
+\end{document}
