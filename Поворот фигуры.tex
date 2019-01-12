@@ -1,0 +1,60 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage[T2A]{fontenc}
+\usepackage{graphicx}
+\usepackage{tikz}
+\author{Турыгин Данила гр.8871}
+\title{}
+\date{}
+
+
+\begin{document}
+\maketitle
+
+\newcommand{\ax}{0} \newcommand{\ay}{0} \newcommand{\az}{0}
+
+\newcommand{\bx}{1.5} \newcommand{\by}{2.5607} \newcommand{\bz}{0.4393}
+
+\newcommand{\cx}{-1} \newcommand{\cy}{0.2929} \newcommand{\cz}{1.7071}
+
+\newcommand{\dx}{0.5} \newcommand{\dy}{2.8536} \newcommand{\dz}{2.1464}
+
+\newcommand{\ex}{1.4142} \newcommand{\ey}{-1} \newcommand{\ez}{1}
+
+\newcommand{\fx}{0.4142} \newcommand{\fy}{-0.7071} \newcommand{\fz}{2.7071}
+
+\begin{tikzpicture}
+\begin{scope}[xscale=4,yscale=4] 
+
+\foreach \name / \x / \z in {A/\ax/\az, 
+B/\bx/\bz, 
+C/\cx/\cz, 
+D/\dx/\dz, 
+E/\ex/\ez, 
+F/\fx/\fz}
+    \node[draw, circle] (\name) at (\x,\z) {\name};
+
+\foreach \from / \to in {A/B, A/C, A/E, B/D, C/D, C/F, E/F}
+    \draw[thick] (\from) -- (\to);
+
+\end{scope} 
+\end{tikzpicture}
+
+\begin{tikzpicture}
+\begin{scope}[xscale=4,yscale=4] 
+
+\foreach \name / \x / \y in {A/\ax/\ay, 
+B/\bx/\by, 
+C/\cx/\cy, 
+D/\dx/\dy, 
+E/\ex/\ey, 
+F/\fx/\fy}
+    \node[draw, circle] (\name) at (\x,\y) {\name};
+
+\foreach \from / \to in {A/B, A/C, A/E, B/D, C/D, C/F, E/F}
+    \draw[thick] (\from) -- (\to);
+
+\end{scope} 
+\end{tikzpicture}
+\end{document}
